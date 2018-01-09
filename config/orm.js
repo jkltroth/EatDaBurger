@@ -26,16 +26,16 @@ function objToSql(object) {
 
 // Object for all our SQL statement functions.
 var orm = {
-    selectAll: function (table, cb) {
+    selectAll: function (table, callback) {
         var queryString = "SELECT * FROM " + table + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            cb(result);
+            callback(result);
         });
     },
-    insertOne: function (table, cols, val, cb) {
+    insertOne: function (table, cols, val, callback) {
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -49,11 +49,11 @@ var orm = {
                 throw err;
             }
 
-            cb(result);
+            callback(result);
         });
     },
     // An example of objColVals would be {burger_name: Big Mac}
-    updateOne: function (table, objColVal, condition, cb) {
+    updateOne: function (table, objColVal, condition, callback) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -67,7 +67,7 @@ var orm = {
                 throw err;
             }
 
-            cb(result);
+            callback(result);
         });
     }
 };
