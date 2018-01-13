@@ -1,40 +1,28 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <img src="../assets/img/burger.png">
-            <h1>Eat-Da-Burger!</h1>
-        </div>
+<div class="row">
+    <div class="col">
+        <ul>
+            {{#each burgers}} 
+                {{#unless devoured}} 
+                    {{> burgers/devourBurg devoured=true}} 
+                {{/unless}} 
+            {{/each}}
+        </ul>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <ul>
-                {{#each cats}} 
-                    {{#unless sleepy}} 
-                        {{> cats/cat-block sleep=true}} 
-                    {{/unless}} 
-                {{/each}}
-            </ul>
-        </div>
-        <div class="col">
-            <ul>
-                {{#each cats}} 
-                    {{#if sleepy}} 
-                        {{> cats/cat-block sleep=false}} 
-                    {{/if}} 
-                {{/each}}
-            </ul>
-        </div>
+    <div class="col">
+        <ul>
+            {{#each burgers}} 
+                {{#if devoured}} 
+                    {{> burgers/devourBurg devoured=false}} 
+                {{/if}} 
+            {{/each}}
+        </ul>
     </div>
-
-
-
-    <form>
-        <div class="form-group">
-            <label for="addBurg">Add a Burger...</label>
-            <textarea class="form-control" id="addBurg" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
 </div>
+
+<form>
+    <div class="form-group">
+        <label for="addBurg">Add a Burger...</label>
+        <textarea class="form-control" id="addBurg" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
