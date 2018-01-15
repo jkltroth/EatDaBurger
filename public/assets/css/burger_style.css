@@ -16,7 +16,7 @@ body {
 label {
     font-weight: bold;
     font-size: 20px;
-    color: #febf10;
+    color: #e41d3b;
 }
 
 .burgerLists {
@@ -26,7 +26,7 @@ label {
 
 .page-header,
 h1 {
-    color: #febf10;
+    color: #e41d3b;
     text-align: center;
     margin-top: 0px;
     font-size: 46px;
@@ -44,13 +44,13 @@ h1 {
 li {
     margin: 5px;
     font-size: 20px;
-    color: #febf10;
+    color: #e41d3b;
 }
 
 .btn {
     border-radius: 10px;
-    background-color: #febf10;
-    color: #95b83d;
+    background-color: #673b16;
+    color: #fcee22;
 }
 
 .footer {
