@@ -1,28 +1,40 @@
-<div class="row">
-    <div class="col">
-        <ul>
-            {{#each burgers}} 
-                {{#unless devoured}} 
-                    {{> burgers/devourBurg devoured=true}} 
-                {{/unless}} 
-            {{/each}}
-        </ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="../assets/img/burger.png">
+            <h1>Eat-Da-Burger!</h1>
+        </div>
     </div>
-    <div class="col">
-        <ul>
-            {{#each burgers}} 
-                {{#if devoured}} 
-                    {{> burgers/devourBurg devoured=false}} 
-                {{/if}} 
-            {{/each}}
-        </ul>
-    </div>
-</div>
 
-<form>
-    <div class="form-group">
-        <label for="addBurg">Add a Burger...</label>
-        <textarea class="form-control" id="addBurg" rows="3"></textarea>
+    <div class="row">
+        <div class="col">
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}} 
+                        {{> burgers/devourBurg devoured=true}} 
+                    {{/unless}} 
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                {{#each burgers}} 
+                    {{#if devoured}} 
+                        {{> burgers/devourBurg devoured=false}} 
+                    {{/if}} 
+                {{/each}}
+            </ul>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+    <form class="create-form">
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="addBurg">
+            {{!-- <textarea class="form-control" id="addBurg" rows="3"></textarea> --}}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add-Da-Burger!</button>
+    </form>
+
+</div>
